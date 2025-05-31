@@ -1,0 +1,48 @@
+@import '../styles/variables.scss';
+
+.detail {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.notFound {
+  text-align: center;
+  padding: 2rem;
+  color: $text-muted;
+}
+
+.movieInfo {
+  margin-bottom: 2rem;
+
+  h1 {
+    margin-bottom: 0.5rem;
+    color: $secondary-color;
+  }
+
+  .movieMeta {
+    color: $text-muted;
+    margin-bottom: 1rem;
+  }
+
+  .synopsis {
+    line-height: 1.6;
+  }
+}
+
+.reviewsSection {
+  h3, h4 {
+    margin-bottom: 1rem;
+    color: $secondary-color;
+  }
+
+  .noReviews {
+    text-align: center;
+    color: $text-muted;
+    margin: 2rem 0;
+  }
+
+  .reviewsList {
+    margin-bottom: 2rem;
+  }
+}

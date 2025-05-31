@@ -1,0 +1,113 @@
+@import '../styles/variables.scss';
+
+.container {
+  background: #fff;
+  border-radius: $border-radius;
+  padding: 1.5rem;
+  border: 1px solid $border-color;
+  box-shadow: $card-shadow;
+}
+
+.title {
+  margin: 0 0 1.5rem 0;
+  color: $text-primary;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &.error {
+    animation: shake 0.3s ease-in-out;
+  }
+
+  &:focus-within .label {
+    color: $button-primary;
+  }
+}
+
+.label {
+  font-weight: 600;
+  color: $text-primary;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.textarea {
+  resize: vertical;
+  padding: 0.75rem;
+  min-height: 100px;
+  max-height: 200px;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: $transition;
+
+  &:focus {
+    border-color: $border-color-focus;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+}
+
+.input,
+.select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: $transition;
+
+  &:focus {
+    border-color: $border-color-focus;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+}
+
+.errorMessage {
+  color: $text-error;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.button {
+  background-color: $button-primary;
+  color: #fff;
+  border: none;
+  border-radius: $border-radius;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    background-color: $button-primary-hover;
+  }
+
+  &:disabled {
+    background-color: $button-disabled;
+    cursor: not-allowed;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%, 75% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+}

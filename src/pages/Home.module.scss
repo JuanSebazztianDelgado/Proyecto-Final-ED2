@@ -1,0 +1,29 @@
+@import '../styles/variables.scss';
+
+.home {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .welcome {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h1 {
+      color: $primary-color;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: $text-color;
+      font-size: 1.1rem;
+    }
+  }
+
+  .moviesSection {
+    h2 {
+      margin-bottom: 1.5rem;
+      color: $secondary-color;
+    }
+  }
+}

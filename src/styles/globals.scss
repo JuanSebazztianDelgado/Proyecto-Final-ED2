@@ -1,0 +1,332 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+// === RESET Y BASE ===
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px; // Base para rem
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-base;
+  color: $text-primary;
+  background-color: $bg-secondary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// === TIPOGRAFÍA GLOBAL ===
+h1, h2, h3, h4, h5, h6 {
+  @include heading-base;
+  margin-bottom: $spacing-md;
+}
+
+h1 { font-size: $font-size-4xl; }
+h2 { font-size: $font-size-3xl; }
+h3 { font-size: $font-size-2xl; }
+h4 { font-size: $font-size-xl; }
+h5 { font-size: $font-size-lg; }
+h6 { font-size: $font-size-md; }
+
+p {
+  margin-bottom: $spacing-base;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: $transition-colors;
+  
+  &:hover {
+    color: $primary-hover;
+    text-decoration: underline;
+  }
+  
+  &:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+}
+
+// === LISTAS ===
+ul, ol {
+  padding-left: $spacing-xl;
+  margin-bottom: $spacing-base;
+}
+
+li {
+  margin-bottom: $spacing-xs;
+}
+
+// === IMÁGENES ===
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// === BOTONES GLOBALES ===
+.btn {
+  @include button-primary;
+  padding: $button-padding-base;
+  font-size: $font-size-base;
+  min-width: 120px;
+  
+  &.btn-sm {
+    padding: $button-padding-sm;
+    font-size: $font-size-sm;
+    min-width: 80px;
+  }
+  
+  &.btn-lg {
+    padding: $button-padding-lg;
+    font-size: $font-size-lg;
+    min-width: 140px;
+  }
+  
+  &.btn-secondary {
+    @include button-secondary;
+  }
+  
+  &.btn-outline {
+    @include button-outline;
+  }
+  
+  &.btn-ghost {
+    @include button-ghost;
+  }
+  
+  &.btn-full {
+    width: 100%;
+  }
+}
+
+// === CARDS GLOBALES ===
+.card {
+  @include card-base;
+  
+  &.card-hover {
+    @include card-hover;
+  }
+  
+  &.card-interactive {
+    @include card-interactive;
+  }
+}
+
+// === CONTENEDORES ===
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-base;
+  
+  @include tablet-up {
+    padding: 0 $spacing-xl;
+  }
+  
+  @include desktop-up {
+    padding: 0 $spacing-2xl;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  padding: 0 $spacing-base;
+  
+  @include tablet-up {
+    padding: 0 $spacing-xl;
+  }
+}
+
+// === LAYOUT UTILITIES ===
+.flex {
+  display: flex;
+  
+  &.flex-center { @include flex-center; }
+  &.flex-between { @include flex-between; }
+  &.flex-column { @include flex-column; }
+  &.flex-wrap { flex-wrap: wrap; }
+  &.flex-nowrap { flex-wrap: nowrap; }
+}
+
+.grid {
+  display: grid;
+  
+  &.grid-1 { @include grid-responsive(1); }
+  &.grid-2 { @include grid-responsive(2); }
+  &.grid-3 { @include grid-responsive(3); }
+  &.grid-4 { @include grid-responsive(4); }
+}
+
+// === SPACING UTILITIES ===
+.m-0 { margin: 0; }
+.m-auto { margin: auto; }
+.mt-auto { margin-top: auto; }
+.mb-auto { margin-bottom: auto; }
+
+.p-0 { padding: 0; }
+.py-sm { padding: $spacing-sm 0; }
+.py-md { padding: $spacing-md 0; }
+.py-lg { padding: $spacing-lg 0; }
+.py-xl { padding: $spacing-xl 0; }
+
+.px-sm { padding: 0 $spacing-sm; }
+.px-md { padding: 0 $spacing-md; }
+.px-lg { padding: 0 $spacing-lg; }
+.px-xl { padding: 0 $spacing-xl; }
+
+// === TEXT UTILITIES ===
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: $text-primary; }
+.text-secondary { color: $text-secondary; }
+.text-muted { color: $text-muted; }
+.text-white { color: $text-white; }
+
+.text-sm { font-size: $font-size-sm; }
+.text-base { font-size: $font-size-base; }
+.text-lg { font-size: $font-size-lg; }
+.text-xl { font-size: $font-size-xl; }
+
+.font-light { font-weight: $font-weight-light; }
+.font-normal { font-weight: $font-weight-normal; }
+.font-medium { font-weight: $font-weight-medium; }
+.font-semibold { font-weight: $font-weight-semibold; }
+.font-bold { font-weight: $font-weight-bold; }
+
+.text-truncate { @include text-truncate; }
+
+// === LOADING ===
+.loading {
+  @include flex-center;
+  padding: $spacing-2xl;
+  
+  &::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 4px solid $border-color;
+    border-top: 4px solid $primary-color;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// === ESTADOS VISUALES ===
+.success {
+  color: $success-color;
+  background-color: $success-light;
+}
+
+.warning {
+  color: $warning-color;
+  background-color: $warning-light;
+}
+
+.error {
+  color: $error-color;
+  background-color: $error-light;
+}
+
+.info {
+  color: $info-color;
+  background-color: $info-light;
+}
+
+// === SCROLLBAR PERSONALIZADO ===
+* {
+  @include custom-scrollbar(8px, #f1f1f1, #c1c1c1);
+}
+
+// === FOCUS VISIBLE ===
+*:focus-visible {
+  outline: 2px solid $primary-color;
+  outline-offset: 2px;
+}
+
+// === ANIMACIONES GLOBALES ===
+.fade-in {
+  @include fade-in;
+}
+
+.slide-up {
+  @include slide-up;
+}
+
+.bounce-in {
+  @include bounce-in;
+}
+
+// === RESPONSIVE HELPERS ===
+.mobile-only {
+  @include tablet-up {
+    display: none !important;
+  }
+}
+
+.desktop-only {
+  @include mobile-only {
+    display: none !important;
+  }
+}
+
+// === ACCESIBILIDAD ===
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// === PRINT STYLES ===
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  a, a:visited {
+    text-decoration: underline;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+}
