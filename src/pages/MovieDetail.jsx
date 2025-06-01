@@ -1,14 +1,14 @@
 
 import { useParams } from 'react-router-dom';
 import styles from './MovieDetail.module.scss';
-import { getMovieById } from '../utils/moviesData';
+import { findMovieById } from '../utils/moviesData';
 import ReviewForm from '../components/Reviews/ReviewForm';
 import ReviewCard from '../components/Reviews/ReviewCard';
 import { useReviews } from '../hooks/useReviews';
 
 const MovieDetail = () => {
   const { id } = useParams();
-  const movie = getMovieById(parseInt(id));
+  const movie = findMovieById(parseInt(id));
   const { getReviewsByMovie } = useReviews();
   const reviews = getReviewsByMovie(parseInt(id));
 

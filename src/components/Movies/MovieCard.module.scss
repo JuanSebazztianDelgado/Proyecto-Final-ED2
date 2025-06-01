@@ -1,4 +1,4 @@
-@import '../styles/variables.scss';
+@import  '../../styles/variables.scss';
 
 .card {
   background: #fff;
@@ -64,7 +64,7 @@
 }
 
 .year {
-  color: $text-color;
+  color: $text-primary;
   font-size: 0.9rem;
   margin: 0;
   font-weight: 500;

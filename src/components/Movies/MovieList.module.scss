@@ -1,4 +1,4 @@
-@import '../styles/variables.scss';
+@import  '../../styles/variables.scss';
 
 .container {
   max-width: 1200px;
@@ -38,7 +38,7 @@
   justify-content: center;
   min-height: 300px;
   text-align: center;
-  color: $text-color;
+  color: $text-primary;
 
   h3 {
     color: $secondary-color;
@@ -55,7 +55,7 @@
 
 .count {
   text-align: center;
-  color: $text-color;
+  color: $text-primary;
   font-size: 0.9rem;
   padding: 1rem;
   background-color: #f9f9f9;
