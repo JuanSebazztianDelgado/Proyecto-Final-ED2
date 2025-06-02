@@ -3,7 +3,7 @@
 Cineverse, aplicación para puntuar y reseñar peliculas.
 
 ##  Demo en Vivo
-- **Sitio Web**: [https://tu-proyecto.netlify.app]
+- **Sitio Web**: [https://proyectofinaljuandelgado.netlify.app/]
 - **Repositorio**: [https://github.com/JuanSebazztianDelgado/Proyecto-Final-ED2.git]
 
 ##  Integrantes del Equipo
